@@ -9,7 +9,6 @@ function getLocalTime(time){
         return "";
     }else{
         var dtA = new Date(time);
-        dtA.setTime(dtA.getTime() + (Math.abs(dtA.getTimezoneOffset())*60*1000));
 
         var year = dtA.getFullYear();
         var month = (dtA.getMonth()+1);
