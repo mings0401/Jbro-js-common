@@ -1,8 +1,3 @@
-/**
- * 현지 시간으로 변경해주는 함수
- * @param time : utc time을 넣으면 된다.
- * @returns {*}
- */
 function getLocalTime(time){
 
     if(time == "" || time == undefined || time == null || time == "null" || time == "undefined"){
@@ -23,6 +18,18 @@ function getLocalTime(time){
         var finish = year+"-"+month+"-"+date+" "+hour+":"+minute;
 
         return finish;
+    }
+}
+
+function isUTCString(sDate){
+    if(sDate == undefined){
+        return false;
+    }
+    var regExDate = /\b\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[1-2]\d|3[0-1])T(?:[0-1]\d|2[0-3]):[0-5]\d:[0-5]\dZ\b/;
+    if (sDate.trim().match(regExDate)) {
+        return true;
+    } else{
+        return false;
     }
 }
 
@@ -137,4 +144,13 @@ function changeDateTimeFormat(sDateTime){
     }
     // Test string is not a date time format
     return '';
+}
+
+/**
+ * 현재 시간을 utcTime으로 return 해주는 함수
+ * @param date
+ */
+function changeTimeToUTCTime(date) {
+    var dtA = new Date(date);
+    return dtA.toISOString();
 }
