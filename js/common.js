@@ -154,3 +154,14 @@ function changeTimeToUTCTime(date) {
     var dtA = new Date(date);
     return dtA.toISOString();
 }
+
+/**
+ * type means .. get, put, delete..
+ * @param {String} type
+ *
+ */
+function ajax(type, url, dataType, callBack) {
+    $.ajax({
+
+    });
+}
